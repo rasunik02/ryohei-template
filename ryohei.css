@@ -257,3 +257,22 @@
   transform: rotate(-2deg) !important;
   display: inline-block !important;
 }
+
+/* --- RESET FÓRUM --- */
+.zenin-card br {
+  display: none !important;
+  line-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+.zenin-header br,
+.zenin-stats-panel br,
+.zenin-image-frame br {
+  display: none !important;
+}
+.zenin-notes br {
+  display: inline !important;
+}
+.zenin-content br {
+  display: inline !important;
+}
