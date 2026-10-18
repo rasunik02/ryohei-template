@@ -1,0 +1,20 @@
+/* Hestia D Lagertha — template de RPG */
+.hestia-rpg{box-sizing:border-box;width:100%;max-width:720px;margin:14px auto;background:#130f14;border:1px solid #a96743;border-radius:9px;overflow:hidden;font-family:Georgia,serif}
+.hestia-rpg *{box-sizing:border-box}
+.hestia-rpg .hestia-hero{height:180px;position:relative;overflow:hidden;background:#301b20;cursor:pointer}
+.hestia-rpg .hestia-image{position:absolute;inset:0;background:url('https://static.zerochan.net/Mereoleona.Vermillion.full.3183998.png') center 32%/cover no-repeat;transition:transform .5s,filter .5s}
+.hestia-rpg .hestia-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,8,12,.88),rgba(50,16,22,.72));opacity:0;transition:opacity .45s}
+.hestia-rpg .hestia-titles{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:12px;opacity:0;transform:translateY(12px);transition:opacity .4s,transform .4s}
+.hestia-rpg .hestia-hero:hover .hestia-image,.hestia-rpg .hestia-hero:focus-within .hestia-image{transform:scale(1.04);filter:brightness(.65)}
+.hestia-rpg .hestia-hero:hover .hestia-overlay,.hestia-rpg .hestia-hero:focus-within .hestia-overlay{opacity:1}
+.hestia-rpg .hestia-hero:hover .hestia-titles,.hestia-rpg .hestia-hero:focus-within .hestia-titles{opacity:1;transform:none}
+.hestia-rpg .hestia-subtitle{font:10px Arial,sans-serif;letter-spacing:3px;color:#f5c98d}
+.hestia-rpg .hestia-name{font:bold 30px Georgia,serif;color:#fff1d9;margin:12px 0}
+.hestia-rpg .hestia-quote{font:italic 13px Georgia,serif;color:#ffd4a0}
+.hestia-rpg .hestia-divider{height:2px;background:#e6a85d}
+.hestia-rpg .hestia-content{padding:22px 28px;color:#e7d8cf;font:14px/1.85 Georgia,serif;text-align:justify}
+.hestia-rpg .hestia-section{text-align:center;color:#d5a46f;font:10px Arial,sans-serif;letter-spacing:2px;margin-bottom:20px}
+.hestia-rpg .hestia-content p{margin:0 0 14px}
+.hestia-rpg .hestia-speech{color:#f0b96e}
+.hestia-rpg .hestia-footer{border-top:1px solid #714334;margin-top:24px;padding-top:15px;text-align:center;color:#d6a574;font:10px Arial,sans-serif;letter-spacing:2px}
+@media(max-width:480px){.hestia-rpg .hestia-hero{height:150px}.hestia-rpg .hestia-name{font-size:23px}.hestia-rpg .hestia-content{padding:18px}}
