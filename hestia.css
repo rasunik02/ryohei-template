@@ -152,7 +152,7 @@
 /* RESPONSIVIDADE */
 @media (max-width: 480px) {
   .hestia-rpg .hestia-hero {
-    height: 220px;
+    height: 280px;
   }
 
   .hestia-rpg .hestia-name {
@@ -163,7 +163,6 @@
     padding: 18px;
   }
 }
-
 /* =========================================
    HESTIA — FICHA DE STATUS
    ========================================= */
@@ -245,11 +244,12 @@
   font: 11px/1.7 Arial, sans-serif;
 }
 
+
 /* Abre com hover ou foco */
 .hestia-rpg .hestia-status:hover,
 .hestia-rpg .hestia-status:focus-within {
-  width: min(280px, calc(100% - 24px));
-  height: 225px;
+  width: min(300px, calc(100% - 24px));
+  height: 245px;
 }
 
 .hestia-rpg .hestia-status:hover .hestia-status-body,
@@ -260,7 +260,7 @@
 /* Celular: abre ao tocar no brasão */
 @media (hover: none) {
   .hestia-rpg .hestia-status:focus-within {
-    width: min(280px, calc(100% - 24px));
-    height: 225px;
+    width: min(300px, calc(100% - 24px));
+    height: 245px;
   }
 }
