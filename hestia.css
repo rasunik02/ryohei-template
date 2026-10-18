@@ -28,19 +28,21 @@
 }
 
 /* IMAGEM — definida diretamente no HTML */
-.hestia-rpg .hestia-image {
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center 10%;
+.hestia-rpg .hestia-hero .hestia-image {
+  display: block !important;
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
   transition: transform .5s, filter .5s;
 }
+
 
 /* SOBREPOSIÇÃO */
 .hestia-rpg .hestia-overlay {
