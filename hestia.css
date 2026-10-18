@@ -163,3 +163,104 @@
     padding: 18px;
   }
 }
+
+/* =========================================
+   HESTIA — FICHA DE STATUS
+   ========================================= */
+
+.hestia-rpg .hestia-status {
+  position: absolute;
+  z-index: 10;
+  top: 12px;
+  right: 12px;
+  width: 38px;
+  height: 38px;
+  overflow: hidden;
+  border: 1px solid #a96743;
+  border-radius: 9px;
+  background: rgba(19, 15, 20, .94);
+  color: #e7d8cf;
+  transition: width .35s, height .35s;
+}
+
+/* Brasão */
+.hestia-rpg .hestia-status-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 38px;
+  height: 36px;
+  color: #f0b96e;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+/* Painel interno */
+.hestia-rpg .hestia-status-body {
+  padding: 8px 14px 14px;
+  opacity: 0;
+  transition: opacity .25s;
+}
+
+.hestia-rpg .hestia-status-title {
+  color: #f5c98d;
+  font: bold 11px Arial, sans-serif;
+  letter-spacing: 2px;
+  margin-bottom: 14px;
+  text-align: center;
+}
+
+.hestia-rpg .hestia-status-line {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+  color: #e7d8cf;
+  font: 12px Arial, sans-serif;
+  margin: 10px 0 5px;
+}
+
+.hestia-rpg .hestia-status-track {
+  display: block;
+  height: 6px;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #382329;
+}
+
+.hestia-rpg .hestia-status-fill {
+  display: block;
+  height: 100%;
+  background: #c85d35;
+}
+
+.hestia-rpg .hestia-status-fill.energy {
+  background: #d5a46f;
+}
+
+.hestia-rpg .hestia-status-info {
+  border-top: 1px solid #714334;
+  margin-top: 15px;
+  padding-top: 12px;
+  color: #d6a574;
+  font: 11px/1.7 Arial, sans-serif;
+}
+
+/* Abre com hover ou foco */
+.hestia-rpg .hestia-status:hover,
+.hestia-rpg .hestia-status:focus-within {
+  width: min(280px, calc(100% - 24px));
+  height: 225px;
+}
+
+.hestia-rpg .hestia-status:hover .hestia-status-body,
+.hestia-rpg .hestia-status:focus-within .hestia-status-body {
+  opacity: 1;
+}
+
+/* Celular: abre ao tocar no brasão */
+@media (hover: none) {
+  .hestia-rpg .hestia-status:focus-within {
+    width: min(280px, calc(100% - 24px));
+    height: 225px;
+  }
+}
