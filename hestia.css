@@ -19,7 +19,7 @@
 
 /* CABEÇALHO */
 .hestia-rpg .hestia-hero {
-  height: 180px;
+  height: 280px;
   position: relative;
   padding: 0;
   overflow: hidden;
@@ -152,7 +152,7 @@
 /* RESPONSIVIDADE */
 @media (max-width: 480px) {
   .hestia-rpg .hestia-hero {
-    height: 150px;
+    height: 220px;
   }
 
   .hestia-rpg .hestia-name {
