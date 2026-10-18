@@ -1,4 +1,4 @@
-/* HESTIA D LAGERTHA — VERSÃO LEÔA CARMESIM */
+/* HESTIA D LAGERTHA — VERSÃO LEÔA CARMESIM (v3.1: leão do conceito no painel) */
 .hestia-rpg{box-sizing:border-box;width:100%;max-width:720px;margin:14px auto;background:#130f14;border:1px solid #a96743;border-radius:9px;overflow:hidden;font-family:Georgia,serif}
 .hestia-rpg *{box-sizing:border-box}
 .hestia-rpg .hestia-hero{height:280px;position:relative;padding:0;overflow:hidden;background:#301b20;cursor:pointer}
@@ -64,8 +64,8 @@
 .hestia-rpg .hestia-status-icon{width:50px;height:50px;position:relative;z-index:2;transition:opacity .18s}
 .hestia-rpg .hestia-crest{width:43px;height:43px}
 /* Ficha: imagem de leoa em marca d'água no lado direito */
-.hestia-rpg .hestia-status-body{position:relative;height:100%;padding:15px 15px 13px;overflow:hidden}
-.hestia-rpg .hestia-status-body::before{content:'';position:absolute;z-index:0;right:-42px;top:50px;width:170px;height:170px;background:url('https://rasunik02.github.io/ryohei-template/hestia_brasao_leoa.png') center/contain no-repeat;opacity:.18;filter:saturate(1.5);pointer-events:none}
+.hestia-rpg .hestia-status-body{position:relative;height:100%;padding:15px 37% 13px 15px;overflow:hidden}
+.hestia-rpg .hestia-status-body::before{content:'';position:absolute;z-index:0;right:0;top:0;bottom:0;width:42%;height:auto;background:url('https://rasunik02.github.io/ryohei-template/hestia_leao_conceito.png') right center/contain no-repeat;opacity:.95;pointer-events:none}
 .hestia-rpg .hestia-status-body>*{position:relative;z-index:1}
 .hestia-rpg .hestia-status-heading{gap:9px;font-size:10px;letter-spacing:1.6px;min-height:46px;border-bottom:1px solid #9c5c39;margin-bottom:13px;padding-bottom:9px}
 .hestia-rpg .hestia-status-heading-crest{width:43px;height:43px;border-radius:9px;box-shadow:0 0 10px rgba(244,107,34,.4)}
@@ -77,9 +77,11 @@
 .hestia-rpg .hestia-pips i{width:10px;height:10px}
 .hestia-rpg .hestia-status-info{margin-top:13px;padding-top:10px;border-top-color:#9c5c39}
 /* Ao abrir: o brasão pequeno some, pois já existe outro no título */
-.hestia-rpg .hestia-status:hover,.hestia-rpg .hestia-status:focus-within,.hestia-rpg .hestia-status:focus{width:min(320px,calc(100% - 24px));height:285px;box-shadow:0 0 0 1px #efaa68,0 0 22px rgba(251,102,30,.36),inset 0 0 25px rgba(143,47,17,.14)}
+.hestia-rpg .hestia-status:hover,.hestia-rpg .hestia-status:focus-within,.hestia-rpg .hestia-status:focus{width:min(430px,calc(100% - 24px));height:285px;box-shadow:0 0 0 1px #efaa68,0 0 22px rgba(251,102,30,.36),inset 0 0 25px rgba(143,47,17,.14)}
 .hestia-rpg .hestia-status:hover .hestia-status-icon,.hestia-rpg .hestia-status:focus-within .hestia-status-icon,.hestia-rpg .hestia-status:focus .hestia-status-icon{opacity:0;pointer-events:none}
 .hestia-rpg .hestia-status:hover .hestia-status-body,.hestia-rpg .hestia-status:focus-within .hestia-status-body,.hestia-rpg .hestia-status:focus .hestia-status-body{opacity:1}
+/* O título some enquanto a ficha está aberta */
+.hestia-rpg .hestia-hero:has(.hestia-status:hover) .hestia-titles,.hestia-rpg .hestia-hero:has(.hestia-status:focus-within) .hestia-titles{opacity:0}
 /* A ficha começa no topo ao abrir; não sobra espaço vazio do brasão */
 .hestia-rpg .hestia-status-body{position:absolute;inset:0;opacity:0;pointer-events:none}
 /* Separação com detalhe de fogo */
@@ -90,7 +92,7 @@
   .hestia-rpg .hestia-name{font-size:clamp(17px,4vw,24px)}
   .hestia-rpg .hestia-subtitle{font-size:8px;letter-spacing:1px}
   .hestia-rpg .hestia-quote{font-size:11px}
-  .hestia-rpg .hestia-status:hover,.hestia-rpg .hestia-status:focus-within,.hestia-rpg .hestia-status:focus{width:min(310px,calc(100% - 24px));height:285px}
+  .hestia-rpg .hestia-status:hover,.hestia-rpg .hestia-status:focus-within,.hestia-rpg .hestia-status:focus{width:min(430px,calc(100% - 24px));height:285px}
 }
 @media(max-width:480px){
   /* Em telas estreitas a ficha ocupa o cabeçalho ao abrir, sem texto por baixo */
@@ -99,4 +101,6 @@
   .hestia-rpg .hestia-name{font-size:23px}
   .hestia-rpg .hestia-status:hover,.hestia-rpg .hestia-status:focus-within,.hestia-rpg .hestia-status:focus{width:calc(100% - 24px);height:285px}
   .hestia-rpg .hestia-hero:has(.hestia-status:hover) .hestia-titles,.hestia-rpg .hestia-hero:has(.hestia-status:focus-within) .hestia-titles{opacity:0}
+  .hestia-rpg .hestia-status-body{padding-right:35%}
+  .hestia-rpg .hestia-status-body::before{width:36%;opacity:.8}
 }
