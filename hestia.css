@@ -1,35 +1,3 @@
-/* HESTIA D LAGERTHA — VERSÃO LEÔA CARMESIM */
-.hestia-rpg{box-sizing:border-box;width:100%;max-width:720px;margin:14px auto;background:#130f14;border:1px solid #a96743;border-radius:9px;overflow:hidden;font-family:Georgia,serif}
-.hestia-rpg *{box-sizing:border-box}
-.hestia-rpg .hestia-hero{height:280px;position:relative;padding:0;overflow:hidden;background:#301b20;cursor:pointer}
-.hestia-rpg .hestia-hero .hestia-image{display:block!important;position:absolute!important;inset:0!important;width:100%!important;height:100%!important;min-height:100%!important;margin:0!important;padding:0!important;border:0!important;background-size:cover!important;background-repeat:no-repeat!important;transition:transform .5s,filter .5s}
-.hestia-rpg .hestia-overlay{position:absolute;inset:0;background:linear-gradient(90deg,rgba(15,8,12,.88),rgba(50,16,22,.72));opacity:0;transition:opacity .45s;pointer-events:none}
-.hestia-rpg .hestia-titles{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:12px;opacity:0;transform:translateY(12px);transition:opacity .4s,transform .4s;pointer-events:none}
-.hestia-rpg .hestia-hero:hover .hestia-image,.hestia-rpg .hestia-hero:focus-within .hestia-image{transform:scale(1.04);filter:brightness(.65)}
-.hestia-rpg .hestia-hero:hover .hestia-overlay,.hestia-rpg .hestia-hero:focus-within .hestia-overlay{opacity:1}
-.hestia-rpg .hestia-hero:hover .hestia-titles,.hestia-rpg .hestia-hero:focus-within .hestia-titles{opacity:1;transform:none}
-.hestia-rpg .hestia-subtitle{font:10px Arial,sans-serif;letter-spacing:3px;color:#f5c98d}
-.hestia-rpg .hestia-name{font:bold 30px Georgia,serif;color:#fff1d9;margin:12px 0}
-.hestia-rpg .hestia-quote{font:italic 13px Georgia,serif;color:#ffd4a0}
-.hestia-rpg .hestia-divider{height:2px;background:#e6a85d}
-.hestia-rpg .hestia-content{padding:22px 28px;color:#e7d8cf;font:14px/1.85 Georgia,serif;text-align:justify}
-.hestia-rpg .hestia-section{text-align:center;color:#d5a46f;font:10px Arial,sans-serif;letter-spacing:2px;margin-bottom:20px}
-.hestia-rpg .hestia-content p{margin:0 0 14px}
-.hestia-rpg .hestia-speech{color:#f0b96e}
-.hestia-rpg .hestia-footer{border-top:1px solid #714334;margin-top:24px;padding-top:15px;text-align:center;color:#d6a574;font:10px Arial,sans-serif;letter-spacing:2px}
-.hestia-rpg .spoiler_content,.hestia-rpg .spoiler_content *,.hestia-rpg .spoiler_content.hidden{color:#000!important}
-/* BRASÃO E PAINEL */
-.hestia-rpg .hestia-status{position:absolute;z-index:10;top:12px;right:12px;width:48px;height:48px;overflow:hidden;border:1px solid #da8849;border-radius:12px;background:rgba(15,9,12,.97);box-shadow:0 0 12px rgba(255,103,30,.25),inset 0 0 12px rgba(166,56,19,.16);color:#e7d8cf;transition:width .32s ease,height .32s ease,box-shadow .32s;outline:none}
-.hestia-rpg .hestia-status-icon{width:46px;height:46px;display:flex;align-items:center;justify-content:center;cursor:pointer;outline:none}
-/* Depois de enviar hestia_brasao_leoa.png ao repositório, este caminho passa a funcionar */
-.hestia-rpg .hestia-crest,.hestia-rpg .hestia-status-heading-crest{display:block;flex:none;background-image:url('https://rasunik02.github.io/ryohei-template/hestia_brasao_leoa.png');background-size:cover;background-position:center;border-radius:8px}
-.hestia-rpg .hestia-crest{width:38px;height:38px;box-shadow:0 0 8px rgba(245,111,37,.55);animation:hestia-ember 2.8s ease-in-out infinite}
-@keyframes hestia-ember{0%,100%{filter:brightness(.95);box-shadow:0 0 6px rgba(255,100,29,.35)}50%{filter:brightness(1.16);box-shadow:0 0 13px rgba(255,110,24,.85)}}
-.hestia-rpg .hestia-status-body{padding:4px 14px 12px;opacity:0;transition:opacity .22s;pointer-events:none}
-.hestia-rpg .hestia-status-heading{display:flex;align-items:center;gap:10px;color:#f5c98d;font:bold 10px Arial,sans-serif;letter-spacing:1.3px;white-space:nowrap;margin-bottom:10px;border-bottom:1px solid #77422e;padding-bottom:8px}
-.hestia-rpg .hestia-status-heading-crest{width:27px;height:27px}
-.hestia-rpg .hestia-status-title{color:#f5c98d;font:bold 10px Arial,sans-serif;letter-spacing:1.4px;text-align:left}
-.hestia-rpg .hestia-status-line{display:flex;justify-content:space-between;gap:8px;color:#e7d8cf;font:12px Arial,sans-serif;margin:6px 0}
 .hestia-rpg .hestia-status-track{display:block;height:7px;overflow:hidden;border-radius:8px;background:#382329;border:1px solid #87432b}
 .hestia-rpg .hestia-status-fill{display:block;height:100%;background:linear-gradient(90deg,#a72f25,#ff7828);box-shadow:0 0 8px #e85926}
 .hestia-rpg .hestia-attributes-title{border-top:1px solid #77422e;padding-top:10px;margin:12px 0 9px}
@@ -44,3 +12,59 @@
 .hestia-rpg .hestia-status:hover .hestia-status-body,.hestia-rpg .hestia-status:focus-within .hestia-status-body,.hestia-rpg .hestia-status:focus .hestia-status-body{opacity:1;pointer-events:auto}
 @media(max-width:480px){.hestia-rpg .hestia-hero{height:290px}.hestia-rpg .hestia-name{font-size:23px}.hestia-rpg .hestia-content{padding:18px}.hestia-rpg .hestia-status:hover,.hestia-rpg .hestia-status:focus-within,.hestia-rpg .hestia-status:focus{height:260px}}
 @media(prefers-reduced-motion:reduce){.hestia-rpg .hestia-crest{animation:none}}
+
+
+/* ============================================================
+   HESTIA 3.0 — COMPOSICAO CINEMATOGRAFICA
+   Hero dividido: nome à esquerda, ficha à direita.
+   Preserva todo o estilo da narracao e spoilers anteriores.
+   ============================================================ */
+.hestia-rpg .hestia-hero{height:310px;isolation:isolate}
+.hestia-rpg .hestia-hero .hestia-image{z-index:0}
+.hestia-rpg .hestia-overlay{z-index:1;background:linear-gradient(90deg,rgba(15,7,12,.89) 0%,rgba(31,9,15,.73) 53%,rgba(24,7,9,.43) 100%)}
+/* O nome fica inteiro na metade esquerda ao abrir o cabeçalho */
+.hestia-rpg .hestia-titles{z-index:2;inset:0 auto 0 0;width:55%;padding:15px 12px 15px 22px;justify-content:center}
+.hestia-rpg .hestia-name{font-size:clamp(20px,3.25vw,28px);line-height:1.14;margin:11px 0 12px;text-shadow:0 2px 9px #180a0b}
+.hestia-rpg .hestia-subtitle{font-size:9px;letter-spacing:2px;line-height:1.5}
+.hestia-rpg .hestia-quote{font-size:12px;line-height:1.4}
+/* Painel recolhido: apenas brasão no topo direito */
+.hestia-rpg .hestia-status{top:12px;right:12px;width:52px;height:52px;z-index:5;border:1px solid #f2a25a;border-radius:12px;background:rgba(12,7,9,.97);box-shadow:0 0 0 2px rgba(65,25,14,.8),0 0 16px rgba(255,106,35,.35);transition:width .32s ease,height .32s ease,box-shadow .32s ease}
+.hestia-rpg .hestia-status-icon{width:50px;height:50px;position:relative;z-index:2;transition:opacity .18s}
+.hestia-rpg .hestia-crest{width:43px;height:43px}
+/* Ficha: imagem de leoa em marca d'água no lado direito */
+.hestia-rpg .hestia-status-body{position:relative;height:100%;padding:15px 15px 13px;overflow:hidden}
+.hestia-rpg .hestia-status-body::before{content:'';position:absolute;z-index:0;right:-42px;top:50px;width:170px;height:170px;background:url('https://rasunik02.github.io/ryohei-template/hestia_brasao_leoa.png') center/contain no-repeat;opacity:.18;filter:saturate(1.5);pointer-events:none}
+.hestia-rpg .hestia-status-body>*{position:relative;z-index:1}
+.hestia-rpg .hestia-status-heading{gap:9px;font-size:10px;letter-spacing:1.6px;min-height:46px;border-bottom:1px solid #9c5c39;margin-bottom:13px;padding-bottom:9px}
+.hestia-rpg .hestia-status-heading-crest{width:43px;height:43px;border-radius:9px;box-shadow:0 0 10px rgba(244,107,34,.4)}
+.hestia-rpg .hestia-status-line{font-size:12px;margin:8px 0 7px}
+.hestia-rpg .hestia-status-track{height:9px;border-color:#ad512d;box-shadow:0 0 7px rgba(249,106,34,.18)}
+.hestia-rpg .hestia-attributes-title{margin:13px 0 11px;padding-top:10px;border-top:1px solid #9c5c39}
+.hestia-rpg .hestia-attribute{font-size:11px;grid-template-columns:minmax(0,1fr) auto 28px;gap:7px;margin:10px 0}
+.hestia-rpg .hestia-pips{gap:4px}
+.hestia-rpg .hestia-pips i{width:10px;height:10px}
+.hestia-rpg .hestia-status-info{margin-top:13px;padding-top:10px;border-top-color:#9c5c39}
+/* Ao abrir: o brasão pequeno some, pois já existe outro no título */
+.hestia-rpg .hestia-status:hover,.hestia-rpg .hestia-status:focus-within,.hestia-rpg .hestia-status:focus{width:min(320px,calc(100% - 24px));height:285px;box-shadow:0 0 0 1px #efaa68,0 0 22px rgba(251,102,30,.36),inset 0 0 25px rgba(143,47,17,.14)}
+.hestia-rpg .hestia-status:hover .hestia-status-icon,.hestia-rpg .hestia-status:focus-within .hestia-status-icon,.hestia-rpg .hestia-status:focus .hestia-status-icon{opacity:0;pointer-events:none}
+.hestia-rpg .hestia-status:hover .hestia-status-body,.hestia-rpg .hestia-status:focus-within .hestia-status-body,.hestia-rpg .hestia-status:focus .hestia-status-body{opacity:1}
+/* A ficha começa no topo ao abrir; não sobra espaço vazio do brasão */
+.hestia-rpg .hestia-status-body{position:absolute;inset:0;opacity:0;pointer-events:none}
+/* Separação com detalhe de fogo */
+.hestia-rpg .hestia-divider{height:3px;background:linear-gradient(90deg,#72331f,#ffb265,#a74323);box-shadow:0 0 9px rgba(247,114,42,.22)}
+@media(max-width:620px){
+  .hestia-rpg .hestia-hero{height:310px}
+  .hestia-rpg .hestia-titles{width:55%;padding-left:10px;padding-right:8px}
+  .hestia-rpg .hestia-name{font-size:clamp(17px,4vw,24px)}
+  .hestia-rpg .hestia-subtitle{font-size:8px;letter-spacing:1px}
+  .hestia-rpg .hestia-quote{font-size:11px}
+  .hestia-rpg .hestia-status:hover,.hestia-rpg .hestia-status:focus-within,.hestia-rpg .hestia-status:focus{width:min(310px,calc(100% - 24px));height:285px}
+}
+@media(max-width:480px){
+  /* Em telas estreitas a ficha ocupa o cabeçalho ao abrir, sem texto por baixo */
+  .hestia-rpg .hestia-hero{height:310px}
+  .hestia-rpg .hestia-titles{width:100%;padding:16px 45px}
+  .hestia-rpg .hestia-name{font-size:23px}
+  .hestia-rpg .hestia-status:hover,.hestia-rpg .hestia-status:focus-within,.hestia-rpg .hestia-status:focus{width:calc(100% - 24px);height:285px}
+  .hestia-rpg .hestia-hero:has(.hestia-status:hover) .hestia-titles,.hestia-rpg .hestia-hero:has(.hestia-status:focus-within) .hestia-titles{opacity:0}
+}
