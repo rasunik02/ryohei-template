@@ -1,0 +1,199 @@
+/* ==========================================================================
+   KURIBAYASHI — "Algoz da Névoa"
+   Template de postagem (código original). Prefixo .kb- em tudo, pra não
+   brigar com o CSS do fórum. Cores no topo: troque aqui pra recolorir tudo.
+   ========================================================================== */
+
+.kb{
+  --kb-bg:#07080a;
+  --kb-panel:#0e1013;
+  --kb-line:#262a31;
+  --kb-steel:#d4d9e0;   /* texto */
+  --kb-ash:#8d949f;     /* texto secundário */
+  --kb-bone:#ece5d3;    /* destaque (osso) */
+  --kb-blood:#b3122a;   /* sangue escuro */
+  --kb-blood-hi:#ff3050;/* sangue vivo */
+  --kb-glow:rgba(255,48,80,.38);
+  position:relative; overflow:hidden; box-sizing:border-box;
+  width:100%; max-width:660px; margin:26px auto; padding:0;
+  background:radial-gradient(120% 80% at 85% 0%,#181b21 0%,var(--kb-bg) 62%);
+  color:var(--kb-steel);
+  font-family:'Barlow','Segoe UI',Arial,sans-serif; font-size:15px; line-height:1.7;
+  text-align:left; letter-spacing:0;
+  box-shadow:inset 0 0 0 1px var(--kb-line);
+  clip-path:polygon(0 0,calc(100% - 28px) 0,100% 28px,100% 100%,28px 100%,0 calc(100% - 28px));
+}
+.kb *,.kb *::before,.kb *::after{ box-sizing:border-box; }
+.kb > *{ position:relative; z-index:1; }
+
+/* ---------- névoa de Kirigakure (camada animada) ---------- */
+.kb > .kb-fog{
+  position:absolute; inset:-10% -10%; z-index:0; pointer-events:none; opacity:.9;
+  background:
+    radial-gradient(55% 38% at 18% 28%,rgba(205,215,230,.10),transparent 70%),
+    radial-gradient(48% 34% at 82% 72%,rgba(205,215,230,.08),transparent 70%),
+    radial-gradient(40% 30% at 55% 100%,rgba(179,18,42,.10),transparent 70%);
+  animation:kb-drift 24s ease-in-out infinite alternate;
+}
+@keyframes kb-drift{
+  from{ transform:translate3d(-4%,1%,0) scale(1.05); }
+  to  { transform:translate3d(4%,-3%,0) scale(1.16); }
+}
+
+/* ---------- cabeçalho ---------- */
+.kb-head{
+  display:flex; align-items:flex-end; gap:24px;
+  padding:32px 30px 20px; position:relative;
+}
+.kb-kanji{
+  position:absolute; right:10px; top:-14px; z-index:0;
+  font:900 160px/1 'Noto Serif JP',serif; color:rgba(255,255,255,.035);
+  pointer-events:none; user-select:none;
+}
+.kb-portrait{
+  position:relative; flex:0 0 138px; height:204px; background:#000;
+  border-left:3px solid var(--kb-blood);
+  clip-path:polygon(0 0,100% 0,100% calc(100% - 28px),calc(100% - 28px) 100%,0 100%);
+}
+.kb-portrait img{
+  display:block; width:100%; height:100%; margin:0; padding:0; border:0;
+  object-fit:cover; object-position:50% 10%;
+  filter:grayscale(.2) contrast(1.1);
+}
+.kb-portrait::after{          /* sombra inferior + linhas de scanner */
+  content:""; position:absolute; inset:0; pointer-events:none;
+  background:
+    linear-gradient(180deg,transparent 52%,rgba(7,8,10,.88)),
+    repeating-linear-gradient(0deg,rgba(0,0,0,.2) 0 1px,transparent 1px 3px);
+}
+.kb-portrait::before{         /* o corte vermelho */
+  content:""; position:absolute; z-index:2; left:-25%; top:46%;
+  width:150%; height:3px; background:var(--kb-blood-hi);
+  transform:rotate(-27deg); box-shadow:0 0 14px var(--kb-glow);
+  animation:kb-slash 5.5s ease-in-out infinite;
+}
+@keyframes kb-slash{ 0%,100%{opacity:.95} 45%{opacity:.25} 55%{opacity:.9} }
+
+.kb-id{ flex:1 1 auto; min-width:0; padding-bottom:6px; }
+.kb-tag{
+  font:600 11px/1 'Barlow Condensed',sans-serif; letter-spacing:.32em;
+  color:var(--kb-ash); text-transform:uppercase; margin:0 0 10px;
+}
+.kb-name{
+  font:400 58px/.9 'Bebas Neue',Impact,sans-serif; letter-spacing:.04em;
+  color:#fff; text-transform:uppercase; margin:0;
+  text-shadow:2px 0 var(--kb-blood),-1px 0 rgba(120,200,255,.22);
+  overflow-wrap:anywhere;
+}
+.kb-clan{
+  font:400 22px/1 'Bebas Neue',Impact,sans-serif; letter-spacing:.55em;
+  color:var(--kb-blood-hi); margin:9px 0 14px;
+}
+.kb-rank{
+  display:inline-block; padding:5px 11px; border:1px solid var(--kb-line);
+  background:rgba(255,255,255,.03);
+  font:600 11px/1.2 'Barlow Condensed',sans-serif; letter-spacing:.22em;
+  color:var(--kb-bone); text-transform:uppercase;
+}
+
+/* ---------- separador de garras ---------- */
+.kb-claws{ position:relative; height:22px; margin:0 30px; overflow:hidden; }
+.kb-claws::before{
+  content:""; position:absolute; left:0; top:0; width:92px; height:100%;
+  background:repeating-linear-gradient(115deg,var(--kb-blood) 0 3px,transparent 3px 15px);
+  opacity:.9;
+}
+.kb-claws::after{
+  content:""; position:absolute; left:108px; right:0; top:50%; height:1px;
+  background:linear-gradient(90deg,var(--kb-line),transparent);
+}
+
+/* ---------- corpo do RP ---------- */
+.kb-body{ padding:10px 30px 28px; text-align:justify; }
+.kb-body b,.kb-body strong{ color:#fff; font-weight:700; }
+.kb-body i,.kb-body em{ color:var(--kb-ash); }
+.kb-body a{ color:var(--kb-blood-hi); text-decoration:none; border-bottom:1px solid rgba(255,48,80,.4); }
+
+.kb-fala{ color:var(--kb-bone); font-weight:600; text-shadow:0 0 14px rgba(236,229,211,.14); }
+.kb-pensa{ color:var(--kb-ash); font-style:italic; }
+.kb-som{
+  font:400 22px/1 'Bebas Neue',Impact,sans-serif; letter-spacing:.16em;
+  color:var(--kb-blood-hi); text-shadow:0 0 10px var(--kb-glow);
+}
+.kb-cut{ position:relative; height:20px; margin:16px 0;
+  background:linear-gradient(90deg,transparent,var(--kb-blood) 50%,transparent) center/100% 1px no-repeat; }
+.kb-cut::after{
+  content:""; position:absolute; left:50%; top:50%; width:9px; height:9px;
+  background:var(--kb-bg); border:1px solid var(--kb-blood);
+  transform:translate(-50%,-50%) rotate(45deg);
+}
+
+/* spoilers do fórum (Cons, Equipamentos...) no mesmo estilo */
+.kb-body dl.spoiler,.kb-body dl.codebox{
+  margin:14px 0; border:1px solid var(--kb-line); background:rgba(255,255,255,.02);
+}
+.kb-body dl.spoiler dt{
+  margin:0; padding:7px 12px; color:var(--kb-bone);
+  font:600 12px/1.2 'Barlow Condensed',sans-serif; letter-spacing:.2em; text-transform:uppercase;
+  background:linear-gradient(90deg,rgba(179,18,42,.35),transparent);
+}
+.kb-body dl.spoiler dd{
+  margin:0; padding:10px 14px; color:var(--kb-steel); font-size:14px;
+  background:transparent !important; border:0 !important; box-shadow:none !important;
+}
+.kb-body dl.spoiler .spoiler_content{ background:transparent !important; color:var(--kb-steel); }
+.kb-body dl.spoiler dt{ cursor:pointer; border:0 !important; }
+
+/* ---------- status ---------- */
+.kb-status{
+  display:grid; grid-template-columns:1fr 1fr; gap:11px 22px;
+  padding:18px 30px 16px; border-top:1px solid var(--kb-line);
+  background:rgba(0,0,0,.28);
+}
+.kb-st{
+  display:grid; grid-template-columns:30px 1fr auto; align-items:center; gap:9px;
+  font:600 12px/1 'Barlow Condensed',sans-serif; letter-spacing:.14em; color:var(--kb-ash);
+}
+.kb-st b{ color:var(--kb-bone); font-weight:600; }
+.kb-st > span:last-child{ color:var(--kb-steel); font-variant-numeric:tabular-nums; }
+.kb-bar{
+  position:relative; display:block; height:6px; background:#14171c;
+  clip-path:polygon(0 0,100% 0,calc(100% - 5px) 100%,0 100%);
+}
+.kb-bar::after{
+  content:""; position:absolute; left:0; top:0; bottom:0; width:var(--p,100%);
+  background:linear-gradient(90deg,var(--c,#b3122a),var(--c2,#ff3050));
+  transition:width .6s ease;
+}
+.kb-st.hp{ --c:#8f0f22; --c2:#ff3050; }
+.kb-st.ck{ --c:#1d4c8a; --c2:#4aa3ff; }
+.kb-st.en{ --c:#86670f; --c2:#f0b429; }
+.kb-st.mp{ --c:#47287a; --c2:#a77bff; }
+
+/* ---------- rodapé ---------- */
+.kb-foot{
+  display:flex; justify-content:space-between; align-items:center; gap:14px;
+  padding:14px 30px 22px; border-top:1px solid var(--kb-line);
+  font:600 11px/1.3 'Barlow Condensed',sans-serif; letter-spacing:.3em;
+  color:var(--kb-ash); text-transform:uppercase;
+}
+.kb-sign{
+  font:italic 400 15px/1.4 'Barlow','Segoe UI',sans-serif; letter-spacing:.01em;
+  text-transform:none; color:var(--kb-bone);
+}
+
+/* ---------- celular ---------- */
+@media (max-width:560px){
+  .kb{ margin:16px auto; }
+  .kb-head{ flex-direction:column; align-items:flex-start; padding:26px 20px 16px; }
+  .kb-name{ font-size:44px; }
+  .kb-clan{ letter-spacing:.4em; }
+  .kb-kanji{ font-size:110px; }
+  .kb-claws{ margin:0 20px; }
+  .kb-body{ padding:8px 20px 22px; text-align:left; }
+  .kb-status{ grid-template-columns:1fr; padding:16px 20px 12px; }
+  .kb-foot{ flex-direction:column; align-items:flex-start; padding:12px 20px 20px; }
+}
+@media (prefers-reduced-motion:reduce){
+  .kb > .kb-fog,.kb-portrait::before{ animation:none; }
+}
