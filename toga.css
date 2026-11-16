@@ -1,0 +1,180 @@
+/* ==========================================================================
+   MOMOCHI TŌGA — "Tinta e Névoa"
+   Template de postagem (código original). Prefixo .mt- em tudo, pra não
+   brigar com o CSS do fórum. Cores no topo: troque aqui pra recolorir tudo.
+   ========================================================================== */
+
+.mt{
+  --mt-ink:#101215;      /* tinta (preto) */
+  --mt-paper:#efede7;    /* papel */
+  --mt-paper2:#e2dfd6;   /* papel escuro */
+  --mt-mute:#5b6068;     /* texto secundário */
+  --mt-water:#2f8fa8;    /* água / Suiton */
+  --mt-water-hi:#6cc6dc; /* água clara */
+  --mt-seal:#b02a37;     /* carimbo vermelho */
+  position:relative; box-sizing:border-box;
+  width:calc(100% - 8px); max-width:660px; margin:30px auto 36px; padding:0;
+  background-color:var(--mt-paper);
+  background-image:radial-gradient(rgba(16,18,21,.045) 1px,transparent 1.3px);
+  background-size:5px 5px;
+  color:var(--mt-ink);
+  font-family:'Zen Kaku Gothic New','Segoe UI',Arial,sans-serif; font-size:15px; line-height:1.75;
+  text-align:left; letter-spacing:0;
+  border:2px solid var(--mt-ink); box-shadow:6px 6px 0 var(--mt-ink);
+  overflow:hidden;
+}
+.mt *,.mt *::before,.mt *::after{ box-sizing:border-box; }
+
+/* ---------- cabeçalho (preto, pontilhado de mangá) ---------- */
+.mt-head{
+  position:relative; display:flex; align-items:flex-end; gap:24px;
+  padding:30px 28px 24px; overflow:hidden;
+  background-color:var(--mt-ink); color:var(--mt-paper);
+  background-image:radial-gradient(rgba(255,255,255,.075) 1.2px,transparent 1.6px);
+  background-size:7px 7px;
+}
+.mt-mist{                    /* névoa de Kirigakure */
+  position:absolute; left:-12%; right:-12%; bottom:-34px; height:130px; pointer-events:none;
+  background:
+    radial-gradient(60% 100% at 28% 100%,rgba(190,215,225,.24),transparent 70%),
+    radial-gradient(50% 90% at 76% 100%,rgba(190,215,225,.17),transparent 70%);
+  animation:mt-fog 18s ease-in-out infinite alternate;
+}
+@keyframes mt-fog{ from{ transform:translateX(-6%); } to{ transform:translateX(6%); } }
+.mt-kanji{
+  position:absolute; right:10px; top:-8px; z-index:0;
+  font:900 150px/1 'Noto Serif JP',serif; color:rgba(255,255,255,.06);
+  pointer-events:none; user-select:none;
+}
+.mt-portrait{
+  position:relative; z-index:1; flex:0 0 140px; height:212px;
+  background:var(--mt-paper); border:3px solid var(--mt-paper);
+  transform:rotate(-1.6deg); box-shadow:6px 6px 0 var(--mt-water);
+}
+.mt-portrait img{
+  display:block; width:100%; height:100%; margin:0; padding:0; border:0;
+  object-fit:cover; object-position:50% 14%;
+}
+.mt-id{ position:relative; z-index:1; flex:1 1 auto; min-width:0; padding-bottom:4px; }
+.mt-tag{
+  font:700 11px/1 'Zen Kaku Gothic New',sans-serif; letter-spacing:.3em;
+  color:var(--mt-water-hi); text-transform:uppercase; margin:0 0 10px;
+}
+.mt-name{
+  font:800 64px/.9 'Shippori Mincho B1','Noto Serif JP',serif; letter-spacing:.02em;
+  color:#fff; margin:0; overflow-wrap:anywhere;
+}
+.mt-name::after{            /* pincelada de água */
+  content:""; display:block; width:130px; height:7px; margin-top:13px;
+  background:var(--mt-water);
+  clip-path:polygon(0 62%,7% 0,100% 28%,93% 100%,0 100%);
+}
+.mt-sur{
+  font:600 14px/1 'Shippori Mincho B1','Noto Serif JP',serif; letter-spacing:.55em;
+  color:var(--mt-paper2); text-transform:uppercase; margin:12px 0 14px;
+}
+.mt-rank{
+  display:inline-block; padding:5px 11px; border:1px solid rgba(239,237,231,.5);
+  font:700 11px/1.2 'Zen Kaku Gothic New',sans-serif; letter-spacing:.2em;
+  color:var(--mt-paper); text-transform:uppercase;
+}
+
+/* ---------- divisor: a katana ---------- */
+.mt-blade{ position:relative; height:20px; }
+.mt-blade::before{          /* a lâmina, afinando até a ponta */
+  content:""; position:absolute; left:40px; right:28px; top:6px; height:7px;
+  background:linear-gradient(180deg,#2c333a,#b4bdc5 48%,#1f252b);
+  clip-path:polygon(0 0,96% 0,100% 100%,0 100%);
+}
+.mt-blade::after{           /* guarda e cabo */
+  content:""; position:absolute; left:18px; top:3px; width:22px; height:14px;
+  background:linear-gradient(90deg,var(--mt-ink) 0 55%,var(--mt-seal) 55% 70%,var(--mt-ink) 70%);
+  border-radius:2px;
+}
+
+/* ---------- corpo do RP ---------- */
+.mt-body{ padding:14px 30px 28px; text-align:justify; }
+.mt-body b,.mt-body strong{
+  font-weight:700; color:var(--mt-ink);
+  background:linear-gradient(transparent 62%,rgba(47,143,168,.3) 62%);
+}
+.mt-body i,.mt-body em{ color:var(--mt-mute); }
+.mt-body a{ color:var(--mt-water); text-decoration:none; border-bottom:1px solid currentColor; }
+
+.mt-fala{ font-weight:700; color:var(--mt-ink); border-left:3px solid var(--mt-water); padding-left:9px; }
+.mt-pensa{ font-style:italic; color:var(--mt-mute); }
+.mt-som{
+  display:inline-block; margin:0 3px;
+  font:800 24px/1 'Shippori Mincho B1','Noto Serif JP',serif; letter-spacing:.08em;
+  color:var(--mt-seal); transform:rotate(-4deg);
+}
+.mt-cut{                    /* pincelada separadora de cena */
+  height:8px; margin:20px auto; width:70%;
+  background:linear-gradient(90deg,transparent,var(--mt-ink) 18%,var(--mt-ink) 82%,transparent);
+  clip-path:polygon(0 50%,9% 0,91% 25%,100% 50%,91% 80%,9% 100%);
+}
+
+/* spoilers do fórum (Cons, Equipamentos...) no mesmo estilo */
+.mt-body dl.spoiler,.mt-body dl.codebox{
+  margin:14px 0; border:2px solid var(--mt-ink); background:var(--mt-paper2);
+}
+.mt-body dl.spoiler dt{
+  margin:0; padding:7px 12px; cursor:pointer; border:0 !important;
+  background:var(--mt-ink); color:var(--mt-paper);
+  font:700 12px/1.2 'Zen Kaku Gothic New',sans-serif; letter-spacing:.2em; text-transform:uppercase;
+}
+.mt-body dl.spoiler dd{
+  margin:0; padding:10px 14px; font-size:14px; color:var(--mt-ink);
+  background:transparent !important; border:0 !important; box-shadow:none !important;
+}
+.mt-body dl.spoiler .spoiler_content{ background:transparent !important; color:var(--mt-ink); }
+
+/* ---------- status ---------- */
+.mt-status{
+  display:grid; grid-template-columns:1fr 1fr; gap:12px 24px;
+  padding:18px 28px; border-top:2px solid var(--mt-ink); background:var(--mt-paper2);
+}
+.mt-st{
+  display:grid; grid-template-columns:28px 1fr auto; align-items:center; gap:9px;
+  font:700 12px/1 'Zen Kaku Gothic New',sans-serif; letter-spacing:.12em; color:var(--mt-mute);
+}
+.mt-st b{ color:var(--mt-ink); font-weight:700; }
+.mt-st > span:last-child{ color:var(--mt-ink); font-variant-numeric:tabular-nums; }
+.mt-bar{
+  position:relative; display:block; height:9px;
+  background:var(--mt-paper); border:1.5px solid var(--mt-ink);
+}
+.mt-bar::after{
+  content:""; position:absolute; left:0; top:0; bottom:0; width:var(--p,100%);
+  background:var(--c,#b02a37); transition:width .6s ease;
+}
+.mt-st.hp{ --c:#b02a37; }
+.mt-st.ck{ --c:#2f8fa8; }
+.mt-st.en{ --c:#d19a2a; }
+.mt-st.mp{ --c:#5b6fb3; }
+
+/* ---------- rodapé ---------- */
+.mt-foot{
+  display:flex; justify-content:space-between; align-items:center; gap:14px;
+  padding:14px 28px 18px; background:var(--mt-ink); color:var(--mt-paper);
+}
+.mt-sign{ font:italic 600 15px/1.4 'Shippori Mincho B1','Noto Serif JP',serif; letter-spacing:.01em; }
+.mt-by{
+  font:700 11px/1.3 'Zen Kaku Gothic New',sans-serif; letter-spacing:.3em;
+  color:var(--mt-water-hi); text-transform:uppercase;
+}
+
+/* ---------- celular ---------- */
+@media (max-width:560px){
+  .mt{ margin:18px auto 26px; }
+  .mt-head{ flex-direction:column; align-items:flex-start; padding:26px 20px 20px; }
+  .mt-name{ font-size:48px; }
+  .mt-sur{ letter-spacing:.4em; }
+  .mt-kanji{ font-size:110px; }
+  .mt-body{ padding:12px 20px 22px; text-align:left; }
+  .mt-status{ grid-template-columns:1fr; padding:16px 20px; }
+  .mt-foot{ flex-direction:column; align-items:flex-start; padding:12px 20px 18px; }
+}
+@media (prefers-reduced-motion:reduce){
+  .mt-mist{ animation:none; }
+}
