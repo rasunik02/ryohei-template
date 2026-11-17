@@ -1,0 +1,186 @@
+/* NECROMANCER - "Cripta" (gotico, preto). Prefixo .nc- em tudo.
+   Cores no topo: troque aqui pra recolorir (ex.: vermelho-sangue = #c0303f). */
+.nc{
+  --nc-void:#040405;
+  --nc-stone:#0b0b0d;
+  --nc-stone2:#121215;
+  --nc-bone:#d8d0bd;
+  --nc-mute:#8b8678;
+  --nc-glow:#b8b0a0;
+  --nc-glow-dim:#4d4943;
+  --nc-blood:#8e1f2b;
+  position:relative; box-sizing:border-box;
+  width:calc(100% - 8px); max-width:660px; margin:30px auto 36px; padding:0;
+  background-color:var(--nc-void);
+  background-image:radial-gradient(rgba(216,208,189,.035) 1px,transparent 1.4px);
+  background-size:6px 6px;
+  color:var(--nc-bone);
+  font-family:'Cormorant Garamond','Georgia',serif; font-size:17px; line-height:1.7;
+  text-align:left; letter-spacing:0;
+  border:1px solid #2a2a33;
+  box-shadow:0 0 0 3px var(--nc-void),0 0 0 4px #2a2a33,0 0 40px rgba(0,0,0,.6);
+  overflow:hidden;
+}
+.nc *,.nc *::before,.nc *::after{ box-sizing:border-box; }
+
+/* cabecalho */
+.nc-head{
+  position:relative; display:flex; align-items:flex-end; gap:26px;
+  padding:34px 30px 26px; overflow:hidden;
+  background:
+    radial-gradient(70% 120% at 20% 0%,rgba(120,20,30,.16),transparent 65%),
+    linear-gradient(180deg,var(--nc-stone2),var(--nc-void));
+}
+.nc-fog{
+  position:absolute; left:-15%; right:-15%; bottom:-30px; height:120px; pointer-events:none;
+  background:
+    radial-gradient(60% 100% at 25% 100%,rgba(216,208,189,.07),transparent 70%),
+    radial-gradient(50% 90% at 78% 100%,rgba(216,208,189,.09),transparent 70%);
+  animation:nc-fog 20s ease-in-out infinite alternate;
+}
+@keyframes nc-fog{ from{ transform:translateX(-7%); } to{ transform:translateX(7%); } }
+.nc-mark{
+  position:absolute; right:14px; top:-6px; z-index:0;
+  font:400 150px/1 'Pirata One','UnifrakturCook',serif; color:rgba(216,208,189,.05);
+  pointer-events:none; user-select:none; transform:rotate(180deg);
+}
+/* retrato em arco gotico */
+.nc-portrait{
+  position:relative; z-index:1; flex:0 0 150px; height:222px; padding:3px;
+  background:linear-gradient(180deg,var(--nc-glow),var(--nc-glow-dim));
+  clip-path:polygon(50% 0,100% 20%,100% 100%,0 100%,0 20%);
+  filter:drop-shadow(0 0 10px rgba(0,0,0,.7));
+}
+.nc-portrait img{
+  display:block; width:100%; height:100%; margin:0; padding:0; border:0;
+  object-fit:cover; object-position:50% 18%;
+  background:var(--nc-stone);
+  clip-path:polygon(50% 0,100% 20%,100% 100%,0 100%,0 20%);
+}
+.nc-id{ position:relative; z-index:1; flex:1 1 auto; min-width:0; align-self:stretch; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; }
+.nc-tag{
+  font:600 12px/1 'Cinzel',serif; letter-spacing:.34em; text-transform:uppercase;
+  color:var(--nc-glow); margin:0 0 12px;
+}
+.nc-name{
+  font:400 58px/.95 'Pirata One','UnifrakturCook',serif; letter-spacing:.02em;
+  color:var(--nc-bone); margin:0 0 16px; overflow-wrap:anywhere;
+  text-shadow:0 0 18px rgba(0,0,0,.7);
+}
+.nc-sur{
+  font:600 13px/1 'Cinzel',serif; letter-spacing:.5em; text-transform:uppercase;
+  color:var(--nc-mute); margin:12px 0 14px;
+}
+.nc-rank{
+  display:inline-block; padding:12px 14px; text-align:center;
+  border:1px solid var(--nc-glow-dim); color:var(--nc-bone);
+  font:600 15px/1.5 'Cinzel',serif; letter-spacing:.14em; overflow-wrap:normal; text-transform:uppercase;
+  background:rgba(216,208,189,.04);
+}
+
+/* divisor ornamental */
+.nc-rule{
+  position:relative; height:22px; margin:6px 30px 10px;
+}
+.nc-rule::before{
+  content:""; position:absolute; left:0; right:0; top:11px; height:1px;
+  background:linear-gradient(90deg,transparent,var(--nc-glow-dim) 15%,var(--nc-glow-dim) calc(50% - 22px),transparent calc(50% - 22px),transparent calc(50% + 22px),var(--nc-glow-dim) calc(50% + 22px),var(--nc-glow-dim) 85%,transparent);
+}
+.nc-rule::after{ content:""; position:absolute; left:50%; top:-9px; width:22px; height:40px; transform:translateX(-50%); background:linear-gradient(var(--nc-bone),var(--nc-bone)) 50% 0/3px 100% no-repeat,linear-gradient(var(--nc-bone),var(--nc-bone)) 50% 74%/100% 3px no-repeat; filter:drop-shadow(0 0 0 var(--nc-void)); }
+
+/* corpo */
+.nc-body{ padding:12px 32px 28px; text-align:justify; }
+.nc-body b,.nc-body strong{
+  font-family:'Cinzel',serif; font-weight:600; font-size:.88em; letter-spacing:.08em;
+  color:var(--nc-glow);
+}
+.nc-body i,.nc-body em{ color:var(--nc-mute); }
+.nc-body a{ color:var(--nc-glow); text-decoration:none; border-bottom:1px dotted currentColor; }
+
+.nc-fala{ color:#fff; font-weight:600; border-left:2px solid var(--nc-glow); padding-left:10px; text-shadow:0 0 10px rgba(0,0,0,.6); }
+.nc-pensa{ font-style:italic; color:var(--nc-mute); }
+.nc-som{
+  display:inline-block; margin:0 3px;
+  font:400 26px/1 'Pirata One','UnifrakturCook',serif; letter-spacing:.06em;
+  color:var(--nc-blood); transform:rotate(-3deg); text-shadow:0 0 10px rgba(142,31,43,.5);
+}
+.nc-cut{
+  position:relative; height:14px; margin:22px auto; width:60%;
+  background:linear-gradient(90deg,transparent,var(--nc-glow-dim),transparent);
+  clip-path:polygon(0 50%,45% 46%,50% 0,55% 46%,100% 50%,55% 54%,50% 100%,45% 54%);
+}
+
+/* spoilers do forum */
+.nc-body dl.spoiler,.nc-body dl.codebox{
+  margin:14px 0; border:1px solid #2a2a33; background:var(--nc-stone);
+}
+.nc-body dl.spoiler dt{
+  margin:0; padding:8px 12px; cursor:pointer; border:0 !important;
+  background:var(--nc-stone2); color:var(--nc-glow);
+  font:600 12px/1.2 'Cinzel',serif; letter-spacing:.22em; text-transform:uppercase;
+}
+.nc-body dl.spoiler dd{
+  margin:0; padding:10px 14px; font-size:15px; color:var(--nc-bone);
+  background:transparent !important; border:0 !important; box-shadow:none !important;
+}
+.nc-body dl.spoiler .spoiler_content{ background:transparent !important; color:var(--nc-bone); }
+
+/* status */
+.nc-status{
+  display:grid; grid-template-columns:1fr 1fr; gap:12px 26px;
+  padding:18px 30px; border-top:1px solid #2a2a33; background:var(--nc-stone);
+}
+.nc-st{
+  display:grid; grid-template-columns:28px 1fr auto; align-items:center; gap:9px;
+  font:600 12px/1 'Cinzel',serif; letter-spacing:.12em; color:var(--nc-mute);
+}
+.nc-st b{ color:var(--nc-bone); font-weight:600; }
+.nc-st > span:last-child{ color:var(--nc-bone); font-variant-numeric:tabular-nums; }
+.nc-bar{
+  position:relative; display:block; height:8px;
+  background:var(--nc-void); border:1px solid #2a2a33;
+}
+.nc-bar::after{
+  content:""; position:absolute; left:0; top:0; bottom:0; width:var(--p,100%);
+  background:var(--c,#8e1f2b); box-shadow:0 0 8px var(--c,#8e1f2b); transition:width .6s ease;
+}
+.nc-st.hp{ --c:#8e1f2b; }
+.nc-st.ck{ --c:#6b6760; }
+.nc-st.en{ --c:#8a7a55; }
+.nc-st.mp{ --c:#4f4a63; }
+
+/* status recolhivel (details/summary) */
+.nc-det{ border-top:1px solid #2a2a33; background:var(--nc-stone); }
+.nc-det > summary{
+  list-style:none; cursor:pointer; padding:12px 30px; text-align:center;
+  font:600 12px/1 'Cinzel',serif; letter-spacing:.34em; text-transform:uppercase; color:var(--nc-mute);
+}
+.nc-det > summary::-webkit-details-marker{ display:none; }
+.nc-det > summary::before{ content:"\2020  "; color:var(--nc-blood); }
+.nc-det > summary::after{ content:"  \2020"; color:var(--nc-blood); }
+.nc-det > summary:hover{ color:var(--nc-bone); }
+.nc-det[open] > summary{ color:var(--nc-bone); border-bottom:1px solid #2a2a33; }
+.nc-det .nc-status{ border-top:0; }
+/* rodape */
+.nc-foot{
+  display:flex; justify-content:space-between; align-items:center; gap:14px;
+  padding:14px 30px 18px; background:var(--nc-void); border-top:1px solid #2a2a33;
+}
+.nc-sign{ font:italic 600 17px/1.4 'Cormorant Garamond',serif; color:var(--nc-bone); }
+.nc-by{ font:600 11px/1.3 'Cinzel',serif; letter-spacing:.3em; color:var(--nc-glow); text-transform:uppercase; }
+
+/* celular */
+@media (max-width:560px){
+  .nc{ margin:18px auto 26px; }
+  .nc-head{ flex-direction:column; align-items:center; padding:26px 20px 20px; }
+  .nc-name{ font-size:44px; }
+  .nc-sur{ letter-spacing:.38em; }
+  .nc-mark{ font-size:110px; }
+  .nc-rule{ margin:0 20px; }
+  .nc-body{ padding:10px 20px 22px; text-align:left; }
+  .nc-status{ grid-template-columns:1fr; padding:16px 20px; }
+  .nc-foot{ flex-direction:column; align-items:flex-start; padding:12px 20px 18px; }
+}
+@media (prefers-reduced-motion:reduce){
+  .nc-fog{ animation:none; }
+}
